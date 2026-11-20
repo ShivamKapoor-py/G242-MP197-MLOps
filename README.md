@@ -12,10 +12,11 @@
 - S24CSEU0414 – SHIVAMKAPOOR
 - S24CSEU1188 – HARDIKGARG
 
-## Stage 1 setup
+## Stage 1 Setup
+
 Keep the original CSV files unchanged. Do not open and resave `train.csv` in Excel.
 
-Expected initial layout:
+### Expected Initial Layout
 ```text
 G242_MP197/
 ├── data/
@@ -25,32 +26,72 @@ G242_MP197/
 │       └── holdout_features.csv
 ├── src/
 │   └── data_audit.py
-└── reports/
-    └── findings.yaml
+├── reports/
+│   └── findings.yaml
+├── README.md
+└── .gitignore
 ```
 
-Install and initialize:
+### Install and Initialize
 ```bash
 python -m venv .venv
-# Windows:
+
+# Windows
 .venv\Scripts\activate
-# macOS/Linux:
+
+# macOS/Linux
 source .venv/bin/activate
 
 pip install pandas pyyaml dvc
+
 git init
 dvc init
-dvc add data/raw/train.csv data/raw/later.csv
-git add .
-git commit -m "Stage 1: initialize repository and track raw data"
 ```
 
-Run the audit:
+### Track Dataset Files
+```bash
+dvc add data/raw/train.csv data/raw/later.csv
+
+git add .
+git commit -m "Initialize project and track raw datasets"
+```
+
+### Run the Audit
 ```bash
 python src/data_audit.py --train data/raw/train.csv --later data/raw/later.csv --holdout data/raw/holdout_features.csv
 ```
 
-The audit is read-only: it does not alter the CSV files. Review the output and fill the Stage 1 section of `reports/findings.yaml`.
+The audit script is read-only and does not modify the original CSV files. It checks the dataset structure, missing values, duplicates, and basic data quality.
+
+Review the audit output and update the Stage 1 section of `reports/findings.yaml`.
+
+## Additional Files
+
+### README.md
+Add a short description of the project, its purpose, installation steps, and how to run the audit script.
+
+### .gitignore
+```gitignore
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+```
+
+## Suggested Commit History
+```bash
+git add README.md .gitignore
+git commit -m "Add project documentation and ignore files"
+
+git add src/data_audit.py
+git commit -m "Add dataset audit script"
+
+git add data/raw/*.dvc
+git commit -m "Track datasets with DVC"
+
+git add reports/findings.yaml
+git commit -m "Add Stage 1 dataset audit findings"
+```
 
 ## Important
 - Create ONE public GitHub repository for the group.
