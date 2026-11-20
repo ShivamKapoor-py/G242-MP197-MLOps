@@ -1,0 +1,211 @@
+{
+  "rows": {
+    "train": 1055,
+    "later": 300,
+    "holdout": 250
+  },
+  "data_issues": {
+    "leaking_column": {
+      "present": false,
+      "columns_missing_from_holdout": [
+        "entries_per_hour"
+      ],
+      "leaking_columns": []
+    },
+    "unit_mixup": {
+      "present": false,
+      "scale_ratio_by_column": {
+        "hour": 1.0714285714285714,
+        "nearby_offices": 1.105263157894737,
+        "temp_c": 1.0212014134275618,
+        "rain_mm": 1.1541218637992834,
+        "feeder_buses": 1.2222222222222223,
+        "ticket_price_rs": 1.0277777777777777
+      },
+      "suspicious_columns": [],
+      "group_stats_by_line": {
+        "Blue Line": {
+          "hour": {
+            "median": 14.0,
+            "mean": 14.525862068965518,
+            "min": 6.0,
+            "max": 23.0
+          },
+          "nearby_offices": {
+            "median": 38.0,
+            "mean": 38.4080459770115,
+            "min": 0.0,
+            "max": 80.0
+          },
+          "temp_c": {
+            "median": 28.4,
+            "mean": 28.594252873563217,
+            "min": 8.3,
+            "max": 44.9
+          },
+          "rain_mm": {
+            "median": 32.2,
+            "mean": 30.524425287356323,
+            "min": 0.1,
+            "max": 59.9
+          },
+          "feeder_buses": {
+            "median": 19.0,
+            "mean": 19.655172413793103,
+            "min": 0.0,
+            "max": 40.0
+          },
+          "ticket_price_rs": {
+            "median": 36.0,
+            "mean": 35.64367816091954,
+            "min": 10.0,
+            "max": 60.0
+          }
+        },
+        "Red Line": {
+          "hour": {
+            "median": 14.0,
+            "mean": 14.067692307692308,
+            "min": 6.0,
+            "max": 23.0
+          },
+          "nearby_offices": {
+            "median": 42.0,
+            "mean": 41.65846153846154,
+            "min": 1.0,
+            "max": 80.0
+          },
+          "temp_c": {
+            "median": 28.3,
+            "mean": 28.252615384615385,
+            "min": 8.4,
+            "max": 44.9
+          },
+          "rain_mm": {
+            "median": 27.9,
+            "mean": 28.291692307692305,
+            "min": 0.0,
+            "max": 59.9
+          },
+          "feeder_buses": {
+            "median": 22.0,
+            "mean": 20.45846153846154,
+            "min": 0.0,
+            "max": 40.0
+          },
+          "ticket_price_rs": {
+            "median": 37.0,
+            "mean": 35.67076923076923,
+            "min": 10.0,
+            "max": 60.0
+          }
+        },
+        "Yellow Line": {
+          "hour": {
+            "median": 15.0,
+            "mean": 14.575916230366492,
+            "min": 6.0,
+            "max": 23.0
+          },
+          "nearby_offices": {
+            "median": 40.0,
+            "mean": 40.473821989528794,
+            "min": 0.0,
+            "max": 80.0
+          },
+          "temp_c": {
+            "median": 28.9,
+            "mean": 28.468586387434556,
+            "min": 8.1,
+            "max": 45.0
+          },
+          "rain_mm": {
+            "median": 31.0,
+            "mean": 29.53167539267016,
+            "min": 0.4,
+            "max": 60.0
+          },
+          "feeder_buses": {
+            "median": 18.0,
+            "mean": 19.05235602094241,
+            "min": 0.0,
+            "max": 40.0
+          },
+          "ticket_price_rs": {
+            "median": 37.0,
+            "mean": 35.68586387434555,
+            "min": 10.0,
+            "max": 60.0
+          }
+        }
+      }
+    },
+    "sentinel_value": {
+      "present": false,
+      "outside_later_range": {}
+    },
+    "duplicate_rows": {
+      "present": true,
+      "count": 55
+    },
+    "stuck_sensor": {
+      "present": true,
+      "column": "temp_c",
+      "value": 42.7,
+      "count": 129,
+      "start_date": "2026-05-07",
+      "end_date": "2026-05-28",
+      "all_candidates": {
+        "temp_c": {
+          "value": 42.7,
+          "count": 129,
+          "start_date": "2026-05-07",
+          "end_date": "2026-05-28"
+        }
+      }
+    },
+    "target_typos": {
+      "present": false,
+      "count": 0,
+      "candidate_values": [],
+      "clean_later_max": 5565.0
+    },
+    "spelling_variants": {
+      "present": true,
+      "column": "day_type",
+      "true_levels": 3,
+      "details": {
+        "day_type": {
+          "present": true,
+          "raw_levels": [
+            " holiday",
+            " weekday",
+            " weekend",
+            "HOLIDAY",
+            "Holiday",
+            "WEEKDAY",
+            "WEEKEND",
+            "Weekday",
+            "Weekend",
+            "hol.",
+            "holiday",
+            "holiday ",
+            "wee.",
+            "weekday",
+            "weekday ",
+            "weekend",
+            "weekend "
+          ],
+          "true_levels": 3,
+          "normalized_levels": [
+            "hol.",
+            "holiday",
+            "wee.",
+            "weekday",
+            "weekend"
+          ]
+        }
+      }
+    }
+  }
+}
