@@ -1,0 +1,16 @@
+{
+    "original_test_mae": 179.65087892835245,
+    "later_dataset_mae": 543.6913825168485,
+    "mae_increase_ratio": 3.0263775260107746,
+    "high_drift_features": [
+        "ticket_price_rs"
+    ],
+    "moderate_drift_features": [
+        "temp_c"
+    ],
+    "performance_degraded": true,
+    "significant_feature_drift": true,
+    "retraining_recommended": true,
+    "decision": "RETRAINING_RECOMMENDED",
+    "reason": "Later-set performance degraded substantially and high feature drift was detected. Validate a retrained candidate before promoting it."
+}

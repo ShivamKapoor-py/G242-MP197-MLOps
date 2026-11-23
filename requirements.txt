@@ -1,2 +1,12 @@
-pandas==2.2.3
+pandas
+numpy
+scikit-learn
+mlflow
+fastapi
+uvicorn[standard]
+pydantic
 PyYAML
+joblib
+pytest
+httpx
+dvc

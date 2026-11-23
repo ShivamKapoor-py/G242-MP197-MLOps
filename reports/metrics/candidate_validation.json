@@ -1,0 +1,21 @@
+{
+    "training_rows": 1209,
+    "validation_rows": 91,
+    "validation_start_date": "2026-08-12",
+    "validation_end_date": "2026-08-31",
+    "zero_target_rows_in_candidate_training": 5,
+    "champion_metrics": {
+        "mae": 571.6510172035389,
+        "rmse": 726.7735400795142,
+        "r2": 0.593045871987834
+    },
+    "candidate_metrics": {
+        "mae": 315.25381300585326,
+        "rmse": 430.95657052335656,
+        "r2": 0.8569083615907788
+    },
+    "candidate_mae_improvement_percent": 44.852050723526354,
+    "candidate_model_version": "8",
+    "mlflow_run_id": "ec521c21e1d7443bbcdfa2a76499d9b8",
+    "champion_alias_changed": false
+}

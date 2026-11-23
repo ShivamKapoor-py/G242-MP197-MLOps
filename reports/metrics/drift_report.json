@@ -1,0 +1,128 @@
+{
+    "reference_dataset": "cleaned train.csv",
+    "comparison_dataset": "later.csv",
+    "training_rows": 1000,
+    "later_rows": 300,
+    "features": {
+        "hour": {
+            "feature_type": "numeric",
+            "train_mean": 14.433,
+            "later_mean": 14.356666666666667,
+            "train_min": 6.0,
+            "train_max": 23.0,
+            "later_min": 6.0,
+            "later_max": 23.0,
+            "psi": 0.03980471302349544,
+            "psi_severity": "low",
+            "ks_statistic": 0.049666666666666665,
+            "ks_pvalue": 0.6023181043050433,
+            "ks_significant_at_0_05": false
+        },
+        "nearby_offices": {
+            "feature_type": "numeric",
+            "train_mean": 40.128,
+            "later_mean": 40.50333333333333,
+            "train_min": 0.0,
+            "train_max": 80.0,
+            "later_min": 0.0,
+            "later_max": 80.0,
+            "psi": 0.06362770769942136,
+            "psi_severity": "low",
+            "ks_statistic": 0.043666666666666666,
+            "ks_pvalue": 0.754617267482891,
+            "ks_significant_at_0_05": false
+        },
+        "temp_c": {
+            "feature_type": "numeric",
+            "train_mean": 26.358849999999997,
+            "later_mean": 27.185,
+            "train_min": 8.1,
+            "train_max": 45.0,
+            "later_min": 8.1,
+            "later_max": 45.0,
+            "psi": 0.17501979865188827,
+            "psi_severity": "moderate",
+            "ks_statistic": 0.10733333333333334,
+            "ks_pvalue": 0.009102372169635227,
+            "ks_significant_at_0_05": true
+        },
+        "rain_mm": {
+            "feature_type": "numeric",
+            "train_mean": 29.4991,
+            "later_mean": 30.734333333333332,
+            "train_min": 0.0,
+            "train_max": 60.0,
+            "later_min": 0.0,
+            "later_max": 59.7,
+            "psi": 0.0419485806153331,
+            "psi_severity": "low",
+            "ks_statistic": 0.06733333333333333,
+            "ks_pvalue": 0.23594547360648624,
+            "ks_significant_at_0_05": false
+        },
+        "feeder_buses": {
+            "feature_type": "numeric",
+            "train_mean": 19.738,
+            "later_mean": 20.9,
+            "train_min": 0.0,
+            "train_max": 40.0,
+            "later_min": 0.0,
+            "later_max": 40.0,
+            "psi": 0.049824359267465625,
+            "psi_severity": "low",
+            "ks_statistic": 0.06833333333333333,
+            "ks_pvalue": 0.2215348558403347,
+            "ks_significant_at_0_05": false
+        },
+        "ticket_price_rs": {
+            "feature_type": "numeric",
+            "train_mean": 35.551,
+            "later_mean": 55.42,
+            "train_min": 10.0,
+            "train_max": 60.0,
+            "later_min": 31.0,
+            "later_max": 81.0,
+            "psi": 3.337043614443835,
+            "psi_severity": "high",
+            "ks_statistic": 0.42433333333333334,
+            "ks_pvalue": 6.814155749467156e-38,
+            "ks_significant_at_0_05": true
+        },
+        "day_type": {
+            "feature_type": "categorical",
+            "train_distribution": {
+                "holiday": 0.476,
+                "weekday": 0.277,
+                "weekend": 0.247
+            },
+            "later_distribution": {
+                "holiday": 0.43333333333333335,
+                "weekday": 0.31,
+                "weekend": 0.25666666666666665
+            },
+            "psi": 0.008092262621492829,
+            "psi_severity": "low"
+        },
+        "line": {
+            "feature_type": "categorical",
+            "train_distribution": {
+                "Yellow Line": 0.36,
+                "Blue Line": 0.327,
+                "Red Line": 0.313
+            },
+            "later_distribution": {
+                "Blue Line": 0.38333333333333336,
+                "Yellow Line": 0.35,
+                "Red Line": 0.26666666666666666
+            },
+            "psi": 0.016658370838648056,
+            "psi_severity": "low"
+        }
+    },
+    "high_drift_features": [
+        "ticket_price_rs"
+    ],
+    "moderate_drift_features": [
+        "temp_c"
+    ]
+}

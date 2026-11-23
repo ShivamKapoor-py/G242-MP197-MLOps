@@ -1,0 +1,10 @@
+{
+    "dataset": "later.csv",
+    "rows_evaluated": 300,
+    "model_name": "MP197MetroCrowdRegressor",
+    "model_alias": "champion",
+    "mae": 543.6913825168485,
+    "rmse": 704.9182475428923,
+    "r2": 0.6375017128966489,
+    "mlflow_run_id": "e5b48523658442d6b2a64f6a6d65ff3f"
+}

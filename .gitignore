@@ -1,3 +1,21 @@
+# Python environment and cache
 .venv/
 __pycache__/
 *.py[cod]
+.pytest_cache/
+
+# Local MLflow run artifacts
+mlruns/
+
+# Temporary files
+*.log
+.DS_Store
+Thumbs.db
+# Generated data and temporary MLflow files
+data/processed/
+mlflow_backup_before_upgrade.db
+
+# Python build artifacts
+*.egg-info/
+build/
+dist/

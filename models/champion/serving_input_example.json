@@ -1,0 +1,46 @@
+{
+  "dataframe_split": {
+    "columns": [
+      "hour",
+      "nearby_offices",
+      "temp_c",
+      "rain_mm",
+      "feeder_buses",
+      "ticket_price_rs",
+      "day_type",
+      "line"
+    ],
+    "data": [
+      [
+        21,
+        44,
+        19.7,
+        47.5,
+        16,
+        57,
+        "weekend",
+        "Blue Line"
+      ],
+      [
+        13,
+        50,
+        10.1,
+        46.7,
+        25,
+        38,
+        "holiday",
+        "Blue Line"
+      ],
+      [
+        7,
+        31,
+        11.7,
+        12.6,
+        17,
+        22,
+        "weekday",
+        "Blue Line"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+    "data_sha256": "2889c469f101ae47794a3ac288b945bb9b497ff01e1e91b78f1f570c7931a0b4",
+    "models": [
+        {
+            "model_name": "random_forest",
+            "mae": 207.24634999999998,
+            "rmse": 266.12766343398675,
+            "r2": 0.8876897499909422,
+            "run_id": "2280a610654c4f7c8225504a1d03e284",
+            "model_version": "5"
+        },
+        {
+            "model_name": "extra_trees",
+            "mae": 195.93285,
+            "rmse": 252.43582634723447,
+            "r2": 0.898948832753557,
+            "run_id": "439640f7e3174fb38e3b3e89e79df513",
+            "model_version": "6"
+        },
+        {
+            "model_name": "gradient_boosting",
+            "mae": 179.65087892835245,
+            "rmse": 231.2784788019216,
+            "r2": 0.915177748421543,
+            "run_id": "5042909bbb7a472293a7987b5f9441b3",
+            "model_version": "7"
+        }
+    ],
+    "best_model": {
+        "model_name": "gradient_boosting",
+        "mae": 179.65087892835245,
+        "rmse": 231.2784788019216,
+        "r2": 0.915177748421543,
+        "run_id": "5042909bbb7a472293a7987b5f9441b3",
+        "model_version": "7"
+    }
+}

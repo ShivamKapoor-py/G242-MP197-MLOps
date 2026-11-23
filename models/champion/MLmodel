@@ -1,0 +1,39 @@
+artifact_path: file:///C:/Users/shiva/Downloads/G242_MP197_Stage1/G242_MP197_Stage1/G242-MP197-MLOps/mlruns/0/models/m-533f8883100d48b8b81355eeecbf3239/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.1
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.18.0
+model_id: m-533f8883100d48b8b81355eeecbf3239
+model_size_bytes: 213217
+model_uuid: m-533f8883100d48b8b81355eeecbf3239
+prompts: null
+run_id: 52b946b71f444e0597310c44d9761f8b
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "long", "name": "hour", "required": true}, {"type": "long", "name":
+    "nearby_offices", "required": true}, {"type": "double", "name": "temp_c", "required":
+    true}, {"type": "double", "name": "rain_mm", "required": true}, {"type": "long",
+    "name": "feeder_buses", "required": true}, {"type": "long", "name": "ticket_price_rs",
+    "required": true}, {"type": "string", "name": "day_type", "required": true}, {"type":
+    "string", "name": "line", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-11-20 20:57:40.253106'
