@@ -1,5 +1,4 @@
-```python
-# Import tools for applying transformations to selected columns.
+﻿# Import tools for applying transformations to selected columns.
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder
 
@@ -51,4 +50,3 @@ def build_preprocessor():
 
     # Return the preprocessing pipeline for use during training and prediction.
     return preprocessor
-```

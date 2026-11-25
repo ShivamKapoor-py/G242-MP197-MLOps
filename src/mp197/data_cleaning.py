@@ -1,4 +1,4 @@
-```python
+
 """Data cleaning pipeline for G242 MP197."""
 
 from pathlib import Path
@@ -10,7 +10,7 @@ import pandas as pd
 # Target column representing the hourly passenger entry count.
 TARGET = "entries_per_hour"
 
-# Dates and temperature value associated with the identified sensor issue.
+# Date and temperature values associated with the identified sensor issue.
 STUCK_START = pd.Timestamp("2026-05-07")
 STUCK_END = pd.Timestamp("2026-05-28")
 STUCK_VALUE = 42.7
@@ -49,7 +49,7 @@ def normalize_categories(df):
 
 
 def clean_training_data(input_path):
-    """Clean original training data without modifying the source file."""
+    """Clean training data without modifying the source file."""
 
     # Load the raw dataset and record the original number of rows.
     df = pd.read_csv(input_path)
@@ -93,14 +93,16 @@ def clean_training_data(input_path):
 
     # Ensure that a temperature reference exists for every line.
     if line_medians.isna().any():
-        raise ValueError("Unable to calculate temperature median for every line.")
+        raise ValueError(
+            "Unable to calculate temperature median for every line."
+        )
 
     # Correct the affected temperature readings using their line-specific median.
     df.loc[affected, "temp_c"] = (
         df.loc[affected, "line"].map(line_medians)
     )
 
-    # Record the number of corrected readings and the replacement medians.
+    # Record the number of corrected readings and replacement medians.
     report["sensor_values_corrected"] = affected_count
     report["temperature_medians_by_line"] = {
         str(line): float(value)
@@ -117,7 +119,9 @@ def clean_training_data(input_path):
 
     # Verify that the day-type categories are standardized.
     if set(df["day_type"].unique()) != {
-        "weekday", "weekend", "holiday"
+        "weekday",
+        "weekend",
+        "holiday",
     }:
         raise ValueError("Unexpected day_type categories.")
 
@@ -152,7 +156,7 @@ def save_cleaning_outputs(df, report, output_dir="data/processed"):
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    # Save the cleaned training dataset.
+    # Save the cleaned dataset.
     df.to_csv(output_path / "train_clean.csv", index=False)
 
     # Save the cleaning statistics in JSON format.
@@ -176,4 +180,3 @@ if __name__ == "__main__":
 
     # Save the cleaned dataset and its cleaning report.
     save_cleaning_outputs(cleaned_df, cleaning_report)
-```
