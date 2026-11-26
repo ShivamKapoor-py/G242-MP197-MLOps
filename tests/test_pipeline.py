@@ -1,4 +1,6 @@
-﻿import pandas as pd
+from pathlib import Path
+import pytest
+import pandas as pd
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.pipeline import Pipeline
@@ -7,6 +9,10 @@ from src.mp197.data_cleaning import clean_training_data
 from src.mp197.preprocessing import build_preprocessor, FEATURE_COLUMNS
 
 
+@pytest.mark.skipif(
+    not Path("data/raw/train.csv").exists(),
+    reason="Full training dataset is unavailable in this CI environment",
+)
 def test_training_data_cleaning():
     df, report = clean_training_data("data/raw/train.csv")
 
@@ -17,6 +23,10 @@ def test_training_data_cleaning():
     assert df.isna().sum().sum() == 0
 
 
+@pytest.mark.skipif(
+    not Path("data/raw/train.csv").exists(),
+    reason="Full training dataset is unavailable in this CI environment",
+)
 def test_categories_are_normalized():
     df, _ = clean_training_data("data/raw/train.csv")
 
@@ -43,6 +53,10 @@ def test_preprocessor_output():
     assert transformed.shape[1] > len(FEATURE_COLUMNS)
 
 
+@pytest.mark.skipif(
+    not Path("data/raw/train.csv").exists(),
+    reason="Full training dataset is unavailable in this CI environment",
+)
 def test_model_prediction_pipeline():
     df, _ = clean_training_data("data/raw/train.csv")
 
