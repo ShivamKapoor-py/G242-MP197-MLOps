@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+*.egg-info/
 
 # Local MLflow run artifacts
 mlruns/
@@ -11,11 +12,11 @@ mlruns/
 *.log
 .DS_Store
 Thumbs.db
+
 # Generated data and temporary MLflow files
 data/processed/
 mlflow_backup_before_upgrade.db
 
 # Python build artifacts
-*.egg-info/
 build/
 dist/
