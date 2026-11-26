@@ -1,3 +1,4 @@
+
 group_id: "G242"
 problem_id: "MP197"
 
@@ -5,52 +6,60 @@ data_issues:
   leaking_column:
     present: false
     column: null
+
   unit_mixup:
     present: false
     column: null
     group_value: null
     factor: null
+
   sentinel_value:
     present: false
     column: null
     value: null
     count: null
+
   duplicate_rows:
     present: true
     count: 55
+
   stuck_sensor:
     present: true
     column: "temp_c"
     start_date: "2026-05-07"
     end_date: "2026-05-28"
+
   target_typos:
     present: false
     count: null
+
   spelling_variants:
     present: true
     column: "day_type"
     true_levels: 3
 
 tracking:
-  experiment_name: null
-  best_run_id: null
-  registered_model_name: null
-  champion_version: null
+  experiment_name: "MP197_Metro_Crowd_Prediction"
+  best_run_id: "5042909bbb7a472293a7987b5f9441b3"
+  registered_model_name: "MP197MetroCrowdRegressor"
+  champion_version: 7
 
 monitoring:
   psi:
-    hour: null
-    nearby_offices: null
-    temp_c: null
-    rain_mm: null
-    feeder_buses: null
-    ticket_price_rs: null
-  most_drifted_feature: null
+    hour: 0.039804
+    nearby_offices: 0.063628
+    temp_c: 0.175020
+    rain_mm: 0.041949
+    feeder_buses: 0.049824
+    ticket_price_rs: 3.337044
+    most_drifted_feature: "ticket_price_rs"
+
   mae_by_group:
-    'Red Line': null
-    'Blue Line': null
-    'Yellow Line': null
+    "Red Line": null
+    "Blue Line": null
+    "Yellow Line": null
+
   worst_served_group: null
   mae_v1_on_check: null
   mae_v2_on_check: null
-  decision: null
+  decision: "RETRAINING_RECOMMENDED"
