@@ -1,0 +1,23 @@
+{
+    "dataset": "holdout_features.csv",
+    "model_name": "MP197MetroCrowdRegressor",
+    "model_alias": "champion",
+    "model_uri": "models:/MP197MetroCrowdRegressor@champion",
+    "records_received": 250,
+    "predictions_generated": 250,
+    "negative_raw_predictions": 1,
+    "postprocessing": "Negative predictions clipped to zero",
+    "prediction_min": 0.0,
+    "prediction_max": 4601.55809777477,
+    "prediction_mean": 2074.2216945700425,
+    "prediction_median": 2097.900852562679,
+    "output_file": "reports\\metrics\\holdout_predictions.csv",
+    "validation": {
+        "expected_records": 250,
+        "actual_records": 250,
+        "missing_predictions": 0,
+        "duplicate_record_ids": 0,
+        "negative_final_predictions": 0,
+        "passed": true
+    }
+}
